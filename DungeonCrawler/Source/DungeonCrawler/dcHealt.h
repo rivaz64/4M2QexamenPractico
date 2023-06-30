@@ -30,11 +30,11 @@ public:
 
 	//damage this actor, making it have less live
 	UFUNCTION(BlueprintCallable)
-	void damage(float _damage);
+	void Damage(float _damage);
 
 	//gives more live to the actor
 	UFUNCTION(BlueprintCallable)
-	void cure(float _cure);
+	void Cure(float _cure);
 
 
 public:

@@ -32,7 +32,7 @@ void UdcHealt::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 	// ...
 }
 
-void UdcHealt::damage(float _damage)
+void UdcHealt::Damage(float _damage)
 {
 	m_currentHealth -= _damage;
 	if(m_currentHealth <= 0 && onDie.IsBound())
@@ -41,7 +41,7 @@ void UdcHealt::damage(float _damage)
 	}
 }
 
-void UdcHealt::cure(float _cure)
+void UdcHealt::Cure(float _cure)
 {
 	float newHealth = _cure+m_currentHealth;
 	m_currentHealth = newHealth>m_maxHealth ? m_maxHealth : newHealth;
