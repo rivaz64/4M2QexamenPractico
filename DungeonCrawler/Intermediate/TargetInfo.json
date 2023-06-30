@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "DungeonCrawler",
+			"Path": "E:\\github\\4M2QexamenPractico\\DungeonCrawler\\Source\\DungeonCrawler.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "DungeonCrawlerEditor",
+			"Path": "E:\\github\\4M2QexamenPractico\\DungeonCrawler\\Source\\DungeonCrawlerEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

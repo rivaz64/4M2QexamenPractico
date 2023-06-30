@@ -1,0 +1,17 @@
+E:\github\4M2QexamenPractico\DungeonCrawler\Intermediate\Build\Win64\UE4Editor\Development\DungeonCrawler\Definitions.DungeonCrawler.h
+E:\github\4M2QexamenPractico\DungeonCrawler\Source\DungeonCrawler\DungeonCrawlerGameMode.h
+E:\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
+E:\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
+E:\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
+E:\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
+E:\github\4M2QexamenPractico\DungeonCrawler\Intermediate\Build\Win64\UE4Editor\Inc\DungeonCrawler\DungeonCrawlerGameMode.generated.h
+E:\github\4M2QexamenPractico\DungeonCrawler\Source\DungeonCrawler\DungeonCrawlerPlayerController.h
+E:\github\4M2QexamenPractico\DungeonCrawler\Intermediate\Build\Win64\UE4Editor\Inc\DungeonCrawler\DungeonCrawlerPlayerController.generated.h
+E:\github\4M2QexamenPractico\DungeonCrawler\Source\DungeonCrawler\DungeonCrawlerCharacter.h
+E:\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
+E:\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/CharacterMovementReplication.h
+E:\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CharacterMovementReplication.generated.h
+E:\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
+E:\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
+E:\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+E:\github\4M2QexamenPractico\DungeonCrawler\Intermediate\Build\Win64\UE4Editor\Inc\DungeonCrawler\DungeonCrawlerCharacter.generated.h
