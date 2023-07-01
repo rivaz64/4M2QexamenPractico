@@ -42,7 +42,7 @@ void UdcHealt::Damage(float _damage)
 	}
 	else if(onDamage.IsBound())
 	{
-		onDamage.IsBound();
+		onDamage.Broadcast();
 	}
 }
 
