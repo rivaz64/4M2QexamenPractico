@@ -38,6 +38,7 @@ void UdcHealt::Damage(float _damage)
 	if(m_currentHealth <= 0 && onDie.IsBound())
 	{
 		onDie.Broadcast();
+		DestroyComponent();
 	}
 	else if(onDamage.IsBound())
 	{
@@ -51,3 +52,7 @@ void UdcHealt::Cure(float _cure)
 	m_currentHealth = newHealth>m_maxHealth ? m_maxHealth : newHealth;
 }
 
+float UdcHealt::GetLivePercentage()
+{
+	return m_currentHealth/m_maxHealth;
+}

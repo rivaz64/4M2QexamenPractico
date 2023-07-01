@@ -37,6 +37,8 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void Cure(float _cure);
 
+	UFUNCTION(BlueprintCallable)
+	float GetLivePercentage();
 
 public:
 
