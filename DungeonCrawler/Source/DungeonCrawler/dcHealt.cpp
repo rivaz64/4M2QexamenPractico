@@ -39,6 +39,10 @@ void UdcHealt::Damage(float _damage)
 	{
 		onDie.Broadcast();
 	}
+	else if(onDamage.IsBound())
+	{
+		onDamage.IsBound();
+	}
 }
 
 void UdcHealt::Cure(float _cure)

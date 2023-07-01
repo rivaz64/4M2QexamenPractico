@@ -7,6 +7,7 @@
 #include "dcHealt.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDieDelegate);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDamageDelegate);
 
 //used for giving an actor HP
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -42,6 +43,9 @@ public:
 	//what happens when the actor dies
 	UPROPERTY(BlueprintAssignable, Category = "Event")
 	FDieDelegate onDie;
+
+	UPROPERTY(BlueprintAssignable, Category = "Event")
+	FDamageDelegate onDamage;
 
 private:
 	//the max healt og the actor, also its initial health

@@ -17,24 +17,12 @@ UdcHazard::UdcHazard()
 void UdcHazard::BeginPlay()
 {
 	Super::BeginPlay();
-	AActor* owner = GetOwner();
-  if (owner)
-  {
-      // Get the collider component from the owner actor
-      auto collider = owner->FindComponentByClass<UShapeComponent>();
-
-      // Bind the OnComponentBeginOverlap event
-      if (collider)
-      {
-          collider->OnComponentBeginOverlap.AddDynamic(this, &UdcHazard::MakeDamage);
-      }
-      else
-      {
-          UE_LOG(LogTemp, Warning, TEXT("Collider not found on owner actor!"));
-      }
-  }
-	// ...
 	
+}
+
+void UdcHazard::SetCollider(UShapeComponent* _collider)
+{
+  _collider->OnComponentBeginOverlap.AddDynamic(this, &UdcHazard::MakeDamage);
 }
 
 
@@ -48,6 +36,7 @@ void UdcHazard::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 
 void UdcHazard::MakeDamage(UPrimitiveComponent* _overlappedComponent, AActor* _otherActor, UPrimitiveComponent* _otherComp, int32 _otherBodyIndex, bool _bFromSweep, const FHitResult& _sweepResult)
 {
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White,TEXT("make damage"));
   auto health = _otherActor->FindComponentByClass<UdcHealt>();
   if(health)
   {

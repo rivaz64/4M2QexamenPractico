@@ -8,7 +8,7 @@
 #include "dcHazard.generated.h"
 //damages the actor at contact
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class DUNGEONCRAWLER_API UdcHazard : public USceneComponent
+class DUNGEONCRAWLER_API UdcHazard : public UActorComponent
 {
 	GENERATED_BODY()
 
@@ -21,8 +21,12 @@ protected:
 	virtual void BeginPlay() override;
 
 public:	
+
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
+	UFUNCTION(BlueprintCallable)
+	void SetCollider(UShapeComponent* _collider);
 
 	UFUNCTION( )
 	void MakeDamage(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp,
