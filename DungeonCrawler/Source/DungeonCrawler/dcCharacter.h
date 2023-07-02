@@ -26,14 +26,20 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+	//grabs an usable item
 	UFUNCTION(BlueprintCallable)
 	void GrabItem(UdcUsable* _usable);
 
+	//uses the current grabed item
 	UFUNCTION(BlueprintCallable)
 	void UseItem();
 
+	UFUNCTION(BlueprintCallable)
+	UdcUsable* GetCurrentItem();
+
 private:
 
+	//the item it currently has at hand
 	UdcUsable* m_currentItem;
 
 };

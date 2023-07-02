@@ -37,6 +37,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void Cure(float _cure);
 
+	//gets the current live in form of percentage from the max live
 	UFUNCTION(BlueprintCallable)
 	float GetLivePercentage();
 
@@ -46,6 +47,7 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "Event")
 	FDieDelegate onDie;
 
+	//what happens when the actor is damaged
 	UPROPERTY(BlueprintAssignable, Category = "Event")
 	FDamageDelegate onDamage;
 

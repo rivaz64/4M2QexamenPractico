@@ -36,7 +36,6 @@ void UdcUsable::Use()
 {
 	if(m_canUse && onUse.IsBound())
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Used"));
 		onUse.Broadcast();
 		m_canUse = false;
 		GetWorld()->GetTimerManager().SetTimer(m_cooldownHandle, this, &UdcUsable::ResetCooldown, m_coolDownTime, false);

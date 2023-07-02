@@ -38,26 +38,8 @@ void UdcShooter::Shoot()
 {
 	if(m_canShoot && m_bullet)
 	{
-		auto owner = GetOwner();
-		FRotator ComponentRotation = GetComponentRotation();
-
-    // Convert the rotation to a string
-    FString RotationString = ComponentRotation.ToString();
-
-    // Print the rotation string on the screen
-    GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, RotationString);
-		FActorSpawnParameters params;
 		AActor* SpawnedActor = GetWorld()->SpawnActor<AActor>(m_bullet, GetComponentLocation(), GetComponentRotation());
 
-		FRotator rotation = SpawnedActor->GetActorRotation();
-
-    // Convert the rotation to a string
-    RotationString = rotation.ToString();
-
-    // Print the rotation string on the screen
-    GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, RotationString);
-
-		//auto component = SpawnedActor->FindComponentByClass<UStaticMeshComponent>();
 		auto component = SpawnedActor->FindComponentByClass<UProjectileMovementComponent>();//FindComponentByClass<UPrimitiveComponent>();
 		//
 		component->Velocity = GetForwardVector() * m_speed;

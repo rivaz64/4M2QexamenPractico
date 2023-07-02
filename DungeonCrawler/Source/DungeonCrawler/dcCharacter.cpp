@@ -35,16 +35,20 @@ void UdcCharacter::TickComponent(float DeltaTime, ELevelTick TickType, FActorCom
 
 void UdcCharacter::GrabItem(UdcUsable* _usable)
 {
+	auto thisOwner = GetOwner();
+	auto character = Cast<ACharacter>(thisOwner);
+	if(m_currentItem)
+	{
+		m_currentItem->GetOwner()->Destroy();
+		
+	}
 	m_currentItem = _usable;
 	auto otherOwner = _usable->GetOwner();
-	auto thisOwner = GetOwner();
 	_usable->m_user = thisOwner;
 	FAttachmentTransformRules rules(EAttachmentRule::KeepRelative,true);
-	auto character = Cast<ACharacter>(thisOwner);
 	if(character)
 	{
 		otherOwner->AttachToComponent(character->GetMesh(),rules,_usable->m_socket);
-		
 	}
 	else
 	{
@@ -60,5 +64,10 @@ void UdcCharacter::UseItem()
 	{
 		m_currentItem->Use();
 	}
+}
+
+UdcUsable* UdcCharacter::GetCurrentItem()
+{
+	return m_currentItem;
 }
 

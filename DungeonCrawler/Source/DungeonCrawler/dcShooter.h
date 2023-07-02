@@ -35,9 +35,11 @@ public:
   UPROPERTY(EditAnywhere)
   TSubclassOf<AActor> m_bullet;
 
+	//the time between shooting bullets
 	UPROPERTY(EditAnywhere,meta = (ToolTip = "the minimum time beetwen shoots."))
 	float m_coolDownTime;
 
+	//the speed of the bullet
 	UPROPERTY(EditAnywhere,meta = (ToolTip = "the speed of the bullet."))
 	float m_speed;
 
@@ -45,6 +47,6 @@ public:
   
 
 private:
-	//is the cooltime has passed
+	//if the cooltime has passed
 	bool m_canShoot;
 };

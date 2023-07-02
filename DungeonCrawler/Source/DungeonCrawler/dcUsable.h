@@ -42,18 +42,21 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "Event")
 	FUseDelegate onEndUse;
 
-	UPROPERTY(EditAnywhere,meta = (ToolTip = "the minimum time beetwen shoots."))
+
+	UPROPERTY(EditAnywhere,meta = (ToolTip = "the minimum before this item can be used again."))
 	float m_coolDownTime;
 
+	//the user that is grabing this item
 	UPROPERTY(BlueprintReadOnly,DisplayName = "user")
 	AActor* m_user;
 
+	//the socket to attach the item, if any
 	UPROPERTY(EditAnywhere)
 	FName m_socket;
 
 	FTimerHandle m_cooldownHandle;
 
-	//is the cooltime has passed
+	//if the cooltime has passed
 	bool m_canUse;
 
 };
