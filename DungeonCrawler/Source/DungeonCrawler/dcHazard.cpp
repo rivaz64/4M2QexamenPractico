@@ -3,6 +3,7 @@
 
 #include "dcHazard.h"
 #include "dcHealt.h"
+#include "dcUsable.h"
 // Sets default values for this component's properties
 UdcHazard::UdcHazard()
 {
@@ -36,8 +37,10 @@ void UdcHazard::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 
 void UdcHazard::MakeDamage(UPrimitiveComponent* _overlappedComponent, AActor* _otherActor, UPrimitiveComponent* _otherComp, int32 _otherBodyIndex, bool _bFromSweep, const FHitResult& _sweepResult)
 {
-	if(_otherActor == GetOwner()) return;
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White,TEXT("make damage"));
+	auto owner = GetOwner();
+	if(_otherActor == owner) return;
+	auto usable = owner->FindComponentByClass<UdcUsable>();
+	if(usable && usable->m_user == _otherActor) return;
   auto health = _otherActor->FindComponentByClass<UdcHealt>();
   if(health)
   {

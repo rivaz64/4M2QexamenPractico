@@ -3,6 +3,7 @@
 
 #include "dcCharacter.h"
 #include "dcUsable.h"
+#include "GameFramework/Character.h"
 // Sets default values for this component's properties
 UdcCharacter::UdcCharacter()
 {
@@ -32,13 +33,25 @@ void UdcCharacter::TickComponent(float DeltaTime, ELevelTick TickType, FActorCom
 	// ...
 }
 
-void UdcCharacter::GrabItem(UdcUsable* _usable)
+void UdcCharacter::GrabItem(UdcUsable* _usable,FName _socket)
 {
 	m_currentItem = _usable;
 	auto otherOwner = _usable->GetOwner();
 	auto thisOwner = GetOwner();
+	_usable->m_user = thisOwner;
 	FAttachmentTransformRules rules(EAttachmentRule::KeepRelative,true);
-	otherOwner->AttachToActor(thisOwner,rules);
+	auto character = Cast<ACharacter>(thisOwner);
+	if(character)
+	{
+		otherOwner->AttachToComponent(character->GetMesh(),rules,_socket);
+		
+	}
+	else
+	{
+		otherOwner->AttachToActor(thisOwner,rules,_socket);
+	}
+	
+	otherOwner->SetActorRelativeLocation(FVector(0,0,0));
 }
 
 void UdcCharacter::UseItem()

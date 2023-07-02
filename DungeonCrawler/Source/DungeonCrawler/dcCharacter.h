@@ -27,7 +27,7 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	UFUNCTION(BlueprintCallable)
-	void GrabItem(UdcUsable* _usable);
+	void GrabItem(UdcUsable* _usable,FName _socket);
 
 	UFUNCTION(BlueprintCallable)
 	void UseItem();

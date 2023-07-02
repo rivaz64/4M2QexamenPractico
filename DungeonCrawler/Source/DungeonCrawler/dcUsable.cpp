@@ -34,9 +34,20 @@ void UdcUsable::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 
 void UdcUsable::Use()
 {
-	if(onUse.IsBound())
+	if(m_canUse && onUse.IsBound())
 	{
 		onUse.Broadcast();
+		m_canUse = false;
+		GetWorld()->GetTimerManager().SetTimer(m_cooldownHandle, this, &UdcUsable::ResetCooldown, m_coolDownTime, false);
+	}
+}
+
+void UdcUsable::ResetCooldown()
+{
+	m_canUse = true;
+	if( onEndUse.IsBound())
+	{
+		onEndUse.Broadcast();
 	}
 }
 

@@ -30,12 +30,27 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void Use();
 
-	//UFUNCTION(BlueprintCallable)
-	//void Drop();
+	UFUNCTION()
+	void ResetCooldown();
 
 public:
 
 	//what happen when this is used
 	UPROPERTY(BlueprintAssignable, Category = "Event")
 	FUseDelegate onUse;
+
+	UPROPERTY(BlueprintAssignable, Category = "Event")
+	FUseDelegate onEndUse;
+
+	UPROPERTY(EditAnywhere,meta = (ToolTip = "the minimum time beetwen shoots."))
+	float m_coolDownTime;
+
+	UPROPERTY(BlueprintReadOnly,DisplayName = "user")
+	AActor* m_user;
+
+	FTimerHandle m_cooldownHandle;
+
+	//is the cooltime has passed
+	bool m_canUse;
+
 };
