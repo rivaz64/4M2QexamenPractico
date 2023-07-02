@@ -4,7 +4,7 @@
 #include "dcHealt.h"
 
 // Sets default values for this component's properties
-UdcHealt::UdcHealt()
+UdcHealth::UdcHealth()
 {
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
@@ -15,7 +15,7 @@ UdcHealt::UdcHealt()
 
 
 // Called when the game starts
-void UdcHealt::BeginPlay()
+void UdcHealth::BeginPlay()
 {
 	Super::BeginPlay();
 
@@ -25,14 +25,14 @@ void UdcHealt::BeginPlay()
 
 
 // Called every frame
-void UdcHealt::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+void UdcHealth::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
 	// ...
 }
 
-void UdcHealt::Damage(float _damage)
+void UdcHealth::Damage(float _damage)
 {
 	m_currentHealth -= _damage;
 	if(m_currentHealth <= 0 && onDie.IsBound())
@@ -46,13 +46,13 @@ void UdcHealt::Damage(float _damage)
 	}
 }
 
-void UdcHealt::Cure(float _cure)
+void UdcHealth::Cure(float _cure)
 {
 	float newHealth = _cure+m_currentHealth;
 	m_currentHealth = newHealth>m_maxHealth ? m_maxHealth : newHealth;
 }
 
-float UdcHealt::GetLivePercentage()
+float UdcHealth::GetLivePercentage()
 {
 	return m_currentHealth/m_maxHealth;
 }

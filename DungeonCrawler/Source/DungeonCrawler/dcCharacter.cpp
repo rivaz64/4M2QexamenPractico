@@ -33,7 +33,7 @@ void UdcCharacter::TickComponent(float DeltaTime, ELevelTick TickType, FActorCom
 	// ...
 }
 
-void UdcCharacter::GrabItem(UdcUsable* _usable,FName _socket)
+void UdcCharacter::GrabItem(UdcUsable* _usable)
 {
 	m_currentItem = _usable;
 	auto otherOwner = _usable->GetOwner();
@@ -43,12 +43,12 @@ void UdcCharacter::GrabItem(UdcUsable* _usable,FName _socket)
 	auto character = Cast<ACharacter>(thisOwner);
 	if(character)
 	{
-		otherOwner->AttachToComponent(character->GetMesh(),rules,_socket);
+		otherOwner->AttachToComponent(character->GetMesh(),rules,_usable->m_socket);
 		
 	}
 	else
 	{
-		otherOwner->AttachToActor(thisOwner,rules,_socket);
+		otherOwner->AttachToActor(thisOwner,rules,_usable->m_socket);
 	}
 	
 	otherOwner->SetActorRelativeLocation(FVector(0,0,0));

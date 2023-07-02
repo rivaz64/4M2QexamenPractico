@@ -11,13 +11,13 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDamageDelegate);
 
 //used for giving an actor HP
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class DUNGEONCRAWLER_API UdcHealt : public UActorComponent
+class DUNGEONCRAWLER_API UdcHealth : public UActorComponent
 {
 	GENERATED_BODY()
 
 public:	
 	// Sets default values for this component's properties
-	UdcHealt();
+	UdcHealth();
 
 	
 

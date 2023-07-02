@@ -41,7 +41,7 @@ void UdcHazard::MakeDamage(UPrimitiveComponent* _overlappedComponent, AActor* _o
 	if(_otherActor == owner) return;
 	auto usable = owner->FindComponentByClass<UdcUsable>();
 	if(usable && usable->m_user == _otherActor) return;
-  auto health = _otherActor->FindComponentByClass<UdcHealt>();
+  auto health = _otherActor->FindComponentByClass<UdcHealth>();
   if(health)
   {
     health->Damage(m_damage);

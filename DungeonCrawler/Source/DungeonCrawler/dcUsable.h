@@ -48,6 +48,9 @@ public:
 	UPROPERTY(BlueprintReadOnly,DisplayName = "user")
 	AActor* m_user;
 
+	UPROPERTY(EditAnywhere)
+	FName m_socket;
+
 	FTimerHandle m_cooldownHandle;
 
 	//is the cooltime has passed
