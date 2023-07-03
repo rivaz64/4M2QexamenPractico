@@ -70,14 +70,14 @@ void ADungeonCrawlerCharacter::Tick(float DeltaSeconds)
 	}
 }
 
-void ADungeonCrawlerCharacter::MoveForward(float Value)
+void ADungeonCrawlerCharacter::MoveForward(float _value)
 {
-	GetCharacterMovement()->AddInputVector(FVector::ForwardVector*Value);
+	GetCharacterMovement()->AddInputVector(FVector::ForwardVector*_value);
 }
 
-void ADungeonCrawlerCharacter::MoveRight(float Value)
+void ADungeonCrawlerCharacter::MoveRight(float _value)
 {
-	GetCharacterMovement()->AddInputVector(FVector::RightVector*Value);
+	GetCharacterMovement()->AddInputVector(FVector::RightVector*_value);
 }
 
 void ADungeonCrawlerCharacter::SetupPlayerInputComponent(UInputComponent* _inputComponent)

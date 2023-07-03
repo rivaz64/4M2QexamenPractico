@@ -1,3 +1,0 @@
-E:\github\4M2QexamenPractico\DungeonCrawler\Intermediate\Build\Win64\UE4Editor\Development\DungeonCrawler\Definitions.DungeonCrawler.h
-E:\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
-E:\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h

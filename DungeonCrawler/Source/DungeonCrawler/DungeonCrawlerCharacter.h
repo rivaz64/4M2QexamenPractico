@@ -22,11 +22,11 @@ public:
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 
-	void MoveForward(float Value);
+	void MoveForward(float _value);
 
-	void MoveRight(float Value);
+	void MoveRight(float _value);
 
-	void SetupPlayerInputComponent(class UInputComponent* InputComponent);
+	void SetupPlayerInputComponent(class UInputComponent* _inputComponent);
 
 	//the number of enemies the player has killed
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite,DisplayName = "score")

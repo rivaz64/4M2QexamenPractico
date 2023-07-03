@@ -1,9 +1,0 @@
-E:\github\4M2QexamenPractico\DungeonCrawler\Intermediate\Build\Win64\UE4Editor\Development\DungeonCrawler\Definitions.DungeonCrawler.h
-E:\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
-E:\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-E:\github\4M2QexamenPractico\DungeonCrawler\Source\DungeonCrawler/DungeonCrawlerGameMode.h
-E:\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
-E:\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
-E:\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
-E:\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
-E:\github\4M2QexamenPractico\DungeonCrawler\Intermediate\Build\Win64\UE4Editor\Inc\DungeonCrawler\DungeonCrawlerGameMode.generated.h
