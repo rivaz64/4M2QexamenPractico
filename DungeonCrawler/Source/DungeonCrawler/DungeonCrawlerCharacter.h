@@ -38,6 +38,9 @@ public:
 	UPROPERTY(EditAnywhere,BlueprintReadWrite)
 	class UAudioComponent* m_audioComponent;
 
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,DisplayName = "health")
+	class UdcHealth* m_health;
+
 private:
 	/** Top down camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))

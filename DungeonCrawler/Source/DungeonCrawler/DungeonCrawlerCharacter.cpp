@@ -12,6 +12,7 @@
 #include "Materials/Material.h"
 #include "Engine/World.h"
 #include "dcCharacter.h"
+#include "dcHealt.h"
 #include "Kismet/GameplayStatics.h"
 #include "Components/AudioComponent.h"
 
@@ -50,6 +51,8 @@ ADungeonCrawlerCharacter::ADungeonCrawlerCharacter()
 
 	m_audioComponent = CreateDefaultSubobject<UAudioComponent>(TEXT("Audio"));
 	m_audioComponent->SetupAttachment(RootComponent);
+
+	m_health = CreateDefaultSubobject<UdcHealth>(TEXT("Health"));
 }
 
 void ADungeonCrawlerCharacter::Tick(float DeltaSeconds)
