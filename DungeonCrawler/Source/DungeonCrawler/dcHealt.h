@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "AttackType.h"
 #include "dcHealt.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDieDelegate);
@@ -40,6 +41,9 @@ public:
 	//gets the current live in form of percentage from the max live
 	UFUNCTION(BlueprintCallable)
 	float GetLivePercentage();
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly,DisplayName = "inmunity")
+	EAttackType m_inmunity;
 
 public:
 

@@ -12,6 +12,8 @@
 #include "Materials/Material.h"
 #include "Engine/World.h"
 #include "dcCharacter.h"
+#include "Kismet/GameplayStatics.h"
+#include "Components/AudioComponent.h"
 
 ADungeonCrawlerCharacter::ADungeonCrawlerCharacter()
 {
@@ -46,11 +48,23 @@ ADungeonCrawlerCharacter::ADungeonCrawlerCharacter()
 	PrimaryActorTick.bCanEverTick = true;
 	PrimaryActorTick.bStartWithTickEnabled = true;
 
+	m_audioComponent = CreateDefaultSubobject<UAudioComponent>(TEXT("Audio"));
+	m_audioComponent->SetupAttachment(RootComponent);
 }
 
 void ADungeonCrawlerCharacter::Tick(float DeltaSeconds)
 {
-    Super::Tick(DeltaSeconds);
+	Super::Tick(DeltaSeconds);
+	float vel = GetCharacterMovement()->Velocity.Size();
+	if(vel > 0 && vel <= 700 && !m_isWalking){
+		m_audioComponent->Play();
+		m_isWalking = true;
+	}
+	else if(!(vel > 0 && vel <= 700) && m_isWalking)
+	{
+		m_audioComponent->Stop();
+		m_isWalking = false;
+	}
 }
 
 void ADungeonCrawlerCharacter::MoveForward(float Value)

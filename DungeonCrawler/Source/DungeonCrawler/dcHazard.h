@@ -5,7 +5,10 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "Components/ShapeComponent.h"
+#include "AttackType.h"
 #include "dcHazard.generated.h"
+
+
 //damages the actor at contact
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class DUNGEONCRAWLER_API UdcHazard : public UActorComponent
@@ -33,6 +36,9 @@ public:
 	UFUNCTION( )
 	void MakeDamage(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp,
                                   int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly,DisplayName = "type")
+	EAttackType m_type;
 
 private:
 

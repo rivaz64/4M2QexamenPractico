@@ -32,6 +32,12 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite,DisplayName = "score")
 	int m_score;
 
+	UPROPERTY(EditAnywhere)
+	USoundBase* m_walkSound;
+
+	UPROPERTY(EditAnywhere,BlueprintReadWrite)
+	class UAudioComponent* m_audioComponent;
+
 private:
 	/** Top down camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
@@ -41,7 +47,7 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CameraBoom;
 
-	
+	bool m_isWalking;
 	
 };
 
