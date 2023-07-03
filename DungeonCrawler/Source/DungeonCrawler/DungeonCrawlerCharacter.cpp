@@ -55,6 +55,7 @@ ADungeonCrawlerCharacter::ADungeonCrawlerCharacter()
 	// Activate ticking in order to update the cursor every frame.
 	PrimaryActorTick.bCanEverTick = true;
 	PrimaryActorTick.bStartWithTickEnabled = true;
+
 }
 
 void ADungeonCrawlerCharacter::Tick(float DeltaSeconds)
@@ -87,4 +88,21 @@ void ADungeonCrawlerCharacter::Tick(float DeltaSeconds)
 			CursorToWorld->SetWorldRotation(CursorR);
 		}
 	}
+}
+
+void ADungeonCrawlerCharacter::MoveForward(float Value)
+{
+	GetCharacterMovement()->AddInputVector(FVector::ForwardVector*Value);
+}
+
+void ADungeonCrawlerCharacter::MoveRight(float Value)
+{
+	GetCharacterMovement()->AddInputVector(FVector::RightVector*Value);
+}
+
+void ADungeonCrawlerCharacter::SetupPlayerInputComponent(UInputComponent* _inputComponent)
+{
+	Super::SetupPlayerInputComponent(_inputComponent);
+	InputComponent->BindAxis("MoveForward", this, &ADungeonCrawlerCharacter::MoveForward);
+  InputComponent->BindAxis("MoveRight", this, &ADungeonCrawlerCharacter::MoveRight);
 }
