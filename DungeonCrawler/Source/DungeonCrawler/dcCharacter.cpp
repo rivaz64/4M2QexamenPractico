@@ -35,6 +35,7 @@ void UdcCharacter::TickComponent(float DeltaTime, ELevelTick TickType, FActorCom
 
 void UdcCharacter::GrabItem(UdcUsable* _usable)
 {
+	if(_usable == nullptr) return;
 	auto thisOwner = GetOwner();
 	auto character = Cast<ACharacter>(thisOwner);
 	if(m_currentItem)

@@ -2,7 +2,8 @@
 
 
 #include "dcHealt.h"
-
+#include "GameFramework/Character.h"
+#include "GameFramework/CharacterMovementComponent.h"
 // Sets default values for this component's properties
 UdcHealth::UdcHealth()
 {
@@ -40,10 +41,24 @@ void UdcHealth::Damage(float _damage)
 		onDie.Broadcast();
 		DestroyComponent();
 	}
-	else if(onDamage.IsBound())
+	else
 	{
-		onDamage.Broadcast();
+		auto owner = GetOwner();
+		auto character = Cast<ACharacter>(owner);
+		
+		if(character)
+		{
+			auto movement = character->GetCharacterMovement();
+			movement->StopMovementImmediately();
+			auto impulse = movement-> GetOwner()->GetActorForwardVector()*-6000.0f;
+			movement->AddImpulse(impulse,true);
+		}
+		if(onDamage.IsBound())
+		{
+			onDamage.Broadcast();
+		}
 	}
+		
 }
 
 void UdcHealth::Cure(float _cure)
@@ -56,3 +71,4 @@ float UdcHealth::GetLivePercentage()
 {
 	return m_currentHealth/m_maxHealth;
 }
+

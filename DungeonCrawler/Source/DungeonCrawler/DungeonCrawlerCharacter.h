@@ -28,6 +28,10 @@ public:
 
 	void SetupPlayerInputComponent(class UInputComponent* InputComponent);
 
+	//the number of enemies the player has killed
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite,DisplayName = "score")
+	int m_score;
+
 private:
 	/** Top down camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
@@ -36,5 +40,8 @@ private:
 	/** Camera boom positioning the camera above the character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CameraBoom;
+
+	
+	
 };
 
